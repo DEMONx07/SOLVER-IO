@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smart Answer Finder — Pro</title>
+  <link rel="stylesheet" href="proj.css" />
+</head>
+<body>
+  <div class="page">
+    <div class="container">
+      <header class="card header">
+        <div class="header-top">
+          <div class="logo">📘</div>
+          <h1>Smart Answer Finder <span class="accent">Pro</span></h1>
+          <p class="sub">Advanced document search — upload a PDF/TXT and ask questions.</p>
+        </div>
+
+        <div class="upload-block">
+          <label class="label">
+            <span class="label-icon">⬆️</span> Upload your document
+          </label>
+
+          <div id="dropzone" class="dropzone">
+            <input id="fileInput" type="file" accept=".pdf,.txt" />
+            <div id="dropContent" class="drop-content">
+              <div id="filePreview" class="file-preview hidden">
+                <div class="file-info">
+                  <div class="file-name" id="fileName"></div>
+                  <div class="file-chars" id="fileChars"></div>
+                </div>
+                <button id="removeFile" class="btn btn-ghost">Remove</button>
+              </div>
+
+              <div id="noFile" class="no-file">
+                <div class="icon-large">⬆️</div>
+                <div class="nf-title">Click to upload or drag & drop</div>
+                <div class="nf-sub">Supports PDF and TXT</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="questionArea" class="question-area hidden">
+          <label class="label"><span class="label-icon">🔎</span> Ask your question</label>
+          <div class="row">
+            <input id="questionInput" placeholder="e.g., What is the main purpose of ICMP protocol?" />
+            <button id="findBtn" class="btn btn-primary">Find Answer</button>
+          </div>
+        </div>
+
+        <div id="errorBox" class="error hidden"></div>
+      </header>
+
+      <main>
+        <section id="historySection" class="card history hidden">
+          <div class="history-header">
+            <h2>Q&A History</h2>
+            <div class="history-actions">
+              <button id="exportBtn" class="btn">Export</button>
+              <button id="clearBtn" class="btn btn-danger">Clear</button>
+            </div>
+          </div>
+
+          <div id="historyList" class="history-list"></div>
+        </section>
+
+        <section id="loading" class="card loading hidden">
+          <div class="spinner"></div>
+          <div>Analyzing document and finding answer...</div>
+        </section>
+
+        <section id="emptyState" class="card empty">
+          <div class="empty-inner">
+            <div class="icon-hero">⬆️</div>
+            <h3>Ready to Get Started?</h3>
+            <p>Upload your document and start asking questions. Get accurate answers with confidence scores!</p>
+
+            <div class="features">
+              <div class="feature">🎯 <b>Precise Answers</b><div class="fsmall">Keyword + context awareness</div></div>
+              <div class="feature">📊 <b>Confidence Scores</b><div class="fsmall">See how reliable each answer is</div></div>
+              <div class="feature">💾 <b>Export History</b><div class="fsmall">Save Q&A sessions</div></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card info">
+          <h3>How It Works</h3>
+          <div class="info-grid">
+            <div>
+              <b>✅ What I Do</b>
+              <ul>
+                <li>Extract text from PDF and TXT</li>
+                <li>Advanced keyword + proximity scoring</li>
+                <li>Confidence scores & source hints</li>
+              </ul>
+            </div>
+            <div>
+              <b class="warn">❌ What I Don't Do</b>
+              <ul>
+                <li>Add external info not in your file</li>
+                <li>Store files after session ends</li>
+                <li>Guarantee perfect PDF text extraction</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="po.js"></script>
+</body>
+</html>
